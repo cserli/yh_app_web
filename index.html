@@ -66,11 +66,15 @@
 	   // 获取数据，并发送数据到server
 	   // 开源用http也可以使用websocket的操作
 		document.querySelector(".login-button").onclick = function(){
+			
+			  // 登陆的操作的  
 				addClass(document.querySelector(".login"), "active")
 				setTimeout(function(){
 					addClass(document.querySelector(".sk-rotating-plane"), "active")
 					document.querySelector(".login").style.display = "none"
 				},800)
+				
+				//  登陆滚动特效清除的操作，主要是针对的http请求完成后；做的主要的操作。
 				setTimeout(function(){
 					removeClass(document.querySelector(".login"), "active")
 					removeClass(document.querySelector(".sk-rotating-plane"), "active")
@@ -78,12 +82,13 @@
 					alert("登录成功")
 					
 				},5000)
+				
 				// 获取数据的值
 				var inputValue = document.getElementById("login_name").value;
 				alert(inputValue);
 				var login_password = document.getElementById("login_password").value;
 				alert(login_password);
-				
+				// 发送数据到server 
 		}
 </script>
 </body>
