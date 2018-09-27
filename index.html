@@ -14,19 +14,19 @@
 <div id="particles-js">
 		<div class="login">
 			<div class="login-top">
-				航语网络科技后台管理系统
+				航语网络web后台管理系统
 			</div>
 			<div class="login-center clearfix">
 				<div class="login-center-img"><img src="img/name.png"/></div>
 				<div class="login-center-input">
-					<input type="text" name="" value="" placeholder="请输入您的用户名" onfocus="this.placeholder=''" onblur="this.placeholder='请输入您的用户名'"/>
+					<input type="text" name="" value="" id="login_name" placeholder="请输入您的用户名" onfocus="this.placeholder=''" onblur="this.placeholder='请输入您的用户名'"/>
 					<div class="login-center-input-text">用户名</div>
 				</div>
 			</div>
 			<div class="login-center clearfix">
 				<div class="login-center-img"><img src="img/password.png"/></div>
 				<div class="login-center-input">
-					<input type="password" name=""value="" placeholder="请输入您的密码" onfocus="this.placeholder=''" onblur="this.placeholder='请输入您的密码'"/>
+					<input type="password" name=""value="" id="login_password" placeholder="请输入您的密码" onfocus="this.placeholder=''" onblur="this.placeholder='请输入您的密码'"/>
 					<div class="login-center-input-text">密码</div>
 				</div>
 			</div>
@@ -62,6 +62,9 @@
 	    ele.className = newClass.replace(/^\s+|\s+$/g, '');
 	  }
 	}
+	   // 点击登陆的对话框的基本的操作
+	   // 获取数据，并发送数据到server
+	   // 开源用http也可以使用websocket的操作
 		document.querySelector(".login-button").onclick = function(){
 				addClass(document.querySelector(".login"), "active")
 				setTimeout(function(){
@@ -75,6 +78,12 @@
 					alert("登录成功")
 					
 				},5000)
+				// 获取数据的值
+				var inputValue = document.getElementById("login_name").value;
+				alert(inputValue);
+				var login_password = document.getElementById("login_password").value;
+				alert(login_password);
+				
 		}
 </script>
 </body>
